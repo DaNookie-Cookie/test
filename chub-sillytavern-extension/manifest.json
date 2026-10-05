@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "Chub \u2192 SillyTavern",
+  "version": "1.1.0",
+  "description": "Send Chub.ai character cards straight into a local SillyTavern instance.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://chub.ai/*",
+    "https://www.chub.ai/*",
+    "https://api.chub.ai/*",
+    "http://127.0.0.1/*",
+    "http://localhost/*",
+    "https://gateway.chub.ai/*",
+    "https://avatars.charhub.io/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chub.ai/characters/*",
+        "https://www.chub.ai/characters/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "options.html",
+  "action": {
+    "default_title": "Chub \u2192 SillyTavern"
+  }
+}

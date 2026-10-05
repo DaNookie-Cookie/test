@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chub → SillyTavern Settings</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin: 0; padding: 32px; font: 15px/1.5 system-ui, sans-serif; background: #15171a; color: #eef1f5; }
+    main { max-width: 720px; margin: 0 auto; }
+    h1 { font-size: 24px; margin: 0 0 24px; }
+    label { display: block; margin: 0 0 8px; font-weight: 700; }
+    input[type=text] { width: 100%; box-sizing: border-box; padding: 11px 12px; border: 1px solid #3b4048; border-radius: 8px; background: #20242a; color: inherit; }
+    .row { margin: 18px 0; }
+    .check { display: flex; gap: 10px; align-items: center; font-weight: 400; }
+    button { border: 0; border-radius: 8px; padding: 10px 14px; cursor: pointer; font-weight: 700; }
+    #save { background: #2d6cdf; color: white; }
+    #status { display: inline-block; margin-left: 10px; color: #7fda9f; }
+    .note { color: #aeb6c2; }
+    code { background: #20242a; padding: 2px 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Chub → SillyTavern</h1>
+    <div class="row">
+      <label for="stUrl">SillyTavern URL</label>
+      <input id="stUrl" type="text" spellcheck="false" placeholder="http://127.0.0.1:8000">
+      <p class="note">This extension is set up for the usual local SillyTavern addresses. Keep the tab open and logged in if your instance uses authentication.</p>
+    </div>
+    <div class="row">
+      <label class="check"><input id="openStIfMissing" type="checkbox"> Open SillyTavern automatically when no matching tab is open</label>
+    </div>
+    <button id="save">Save</button><span id="status"></span>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>
